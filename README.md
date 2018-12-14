@@ -1,4 +1,4 @@
-# Method for fitting HtSSM and aDDM with Jags
+# Method for fitting HtSSM and HaDDM with Jags
 
 ## Before running 
 
