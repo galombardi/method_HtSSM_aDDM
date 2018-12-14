@@ -18,5 +18,5 @@ install JAGS-WIENER-MODULE-1.1.tar.gz from library https://sourceforge.net/proje
 
 
 ## How to run the code
-`source('~/HtSSM_wiener/Rscript_tSSMjags_sim.R')`
+`source('~/method_HtSSM_aDDM/Rscript_tSSMjags_FIT_example.R')`
 
