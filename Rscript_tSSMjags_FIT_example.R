@@ -2,7 +2,7 @@ rm(list=ls())
 library(runjags)
 
 # load example data of a bynary food choice task
-load("~/code_HtSSM/dataFit.Rda")
+load("~/method_HtSSM_aDDM/dataFit.Rda")
 Data = dataFit
 #
 # # # Data variables: # # #
@@ -62,10 +62,10 @@ Data = dataFit
     "b1.mu", "b2.mu", "theta.mu", "alpha.mu","bias.mu", "b1.p", "time.mu","time.pr","time", "b2.p",  "theta.p", "bias","alpha.p", "deviance" )
     
     # run the fitting
-    results <- run.jags(model="code_HtSSM/tssmHT_modelWIENER.txt", monitor=monitor, data=dat, n.chains=3, inits=c(inits1,inits2, inits3), plots = TRUE, method="parallel", module="wiener", burnin=50000, sample=10000, thin=10)
+    results <- run.jags(model="method_HtSSM_aDDM/tssmHT_modelWIENER.txt", monitor=monitor, data=dat, n.chains=3, inits=c(inits1,inits2, inits3), plots = TRUE, method="parallel", module="wiener", burnin=50000, sample=10000, thin=10)
     
     suuum<-summary(results)
-    save(results,Data, file="~/code_HtSSM/results_HtSSM_FIT_dataExample.RData")
-    write.csv(suuum, file="~/code_HtSSM/results_HtSSM_FIT_dataExample.csv")
+    save(results,Data, file="~/method_HtSSM_aDDM/results_HtSSM_FIT_dataExample.RData")
+    write.csv(suuum, file="~/method_HtSSM_aDDM/results_HtSSM_FIT_dataExample.csv")
 
 
