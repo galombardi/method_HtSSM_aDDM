@@ -18,7 +18,7 @@ install JAGS-WIENER-MODULE-1.1.tar.gz from library https://sourceforge.net/proje
 
 
 ## How to run the code
-First change the path pathToFolder in the Rscript_tSSMjags_FIT_example.R with the path in which you saved all the scripts  
+First change the path pathToFolder in the Rscript_tSSMjags_FIT_example.R with the path in which you saved all the scripts, for example:  
 `pathToFolder<- "~/pathToFolder"`  
 Then  
 `source('~/method_HtSSM_aDDM/Rscript_tSSMjags_FIT_example.R')`
