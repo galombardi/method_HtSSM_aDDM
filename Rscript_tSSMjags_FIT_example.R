@@ -2,13 +2,15 @@ rm(list=ls())
 library(runjags)
 
 
-# CHANGE THIS WITH THE PATH WHERE YOU SAVE ALL THE SCRIPTS
+# CHANGE THIS WITH THE PATH WHERE YOU SAVE ALL THE SCRIPTS AND THE DATA
 pathToFolder <- getwd()
 
+# DATA FILE NAME 
+mydata <- "dataFit.Rda"
 
 # load example data of a bynary food choice task
 main_folder <- file.path(pathToFolder,"method_HtSSM_aDDM")
-load( file.path(main_folder,"dataFit.Rda"))
+load( file.path(main_folder, mydata))
 
 
 Data = dataFit
