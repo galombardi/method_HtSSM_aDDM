@@ -1,7 +1,7 @@
 rm(list=ls())
 pack = "runjags"
 have = pack %in% rownames(installed.packages())
-if ( any(!have) ) { install.packages( want[!have] ) }
+if ( any(!have) ) { install.packages( pack[!have] ) }
 library(runjags)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
