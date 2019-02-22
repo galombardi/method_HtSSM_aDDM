@@ -23,3 +23,8 @@ First change the path pathToFolder in the Rscript_tSSMjags_FIT_example.R with th
 then run   
 `source('~/method_HtSSM_aDDM/Rscript_tSSMjags_FIT_example.R')`
 
+
+
+## NOTES
+Make sure that the reaction time data you want to fit does not have missing values or NAs before running.
+
