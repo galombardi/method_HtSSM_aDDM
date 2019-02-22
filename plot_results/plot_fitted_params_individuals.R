@@ -93,7 +93,7 @@ geom_histogram(data=dataSingleSubj, aes(wh),alpha = 0.8,position = "identity",bi
 # coord_cartesian(xlim = c(0.3,1.1), ylim = c(0,6500)) +
 ylab(' ') +
 xlab( 'Weights' ) +
-ggtitle("Posterior distribution of the group level mean")+
+ggtitle("Posterior distribution of the inidividual level mean")+
 theme(text = element_text(family = 'Arial')) +
 # annotate(geom="text", x=c(0.97,0.7), y=c(3000,3000), label=c("Health","Taste"),
 #           color=c("pink","red") ) +
@@ -110,7 +110,7 @@ figNoiseSubj <- ggplot() + geom_histogram(data=dataSingleSubj,aes(noise),alpha =
 #coord_cartesian(xlim = c(0.25,1), ylim = c(0,8000)) +
 ylab(' ') +
 xlab( 'Noise' ) +
-ggtitle("Posterior distribution of the group level mean")+
+ggtitle("Posterior distribution of the inidividual level mean")+
 facet_grid(subject~.)+
 theme(text = element_text(family = 'Arial')) +
 theme_bw() +
@@ -126,7 +126,7 @@ figBiasSubj <- ggplot() + geom_histogram(data=dataSingleSubj,aes((bias-0.5)/2),a
 #coord_cartesian(xlim = (c(0.4,0.6)-0.5)/2, ylim = c(0,8000)) +
 ylab(' ') +
 xlab( 'Bias' ) +
-ggtitle("Posterior distribution of the group level mean")+
+ggtitle("Posterior distribution of the inidividual level mean")+
 facet_grid(subject~.)+
 theme(text = element_text(family = 'Arial')) +
 theme_bw() +
@@ -141,7 +141,7 @@ figNDTSubj <- ggplot() + geom_histogram(data=dataSingleSubj,aes(nDT),alpha = 0.8
 #coord_cartesian(xlim = (c(0.4,0.6)-0.5)/2, ylim = c(0,8000)) +
 ylab(' ') +
 xlab( 'Bias' ) +
-ggtitle("Posterior distribution of the group level mean")+
+ggtitle("Posterior distribution of the inidividual level mean")+
 facet_grid(subject~.)+
 theme(text = element_text(family = 'Arial')) +
 theme_bw() +
