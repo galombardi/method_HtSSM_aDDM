@@ -78,7 +78,7 @@ figTimeSubj <- ggplot() + geom_histogram(data=dataSingleSubj,aes(time),alpha = 0
 ggtitle("Posterior distribution of the inidividual level mean")+
 ylab(' ') +
 xlab( 'Time health in' ) +
-facet_grid(subject~.)+
+facet_wrap(subject~.)+
 theme(text = element_text(family = 'Arial')) +
 theme_bw() +
 theme(panel.grid = element_blank())
@@ -97,7 +97,7 @@ ggtitle("Posterior distribution of the inidividual level mean")+
 theme(text = element_text(family = 'Arial')) +
 # annotate(geom="text", x=c(0.97,0.7), y=c(3000,3000), label=c("Health","Taste"),
 #           color=c("pink","red") ) +
-facet_grid(subject~.)+
+facet_wrap(subject~.)+
 theme_bw() +
 theme(panel.grid = element_blank())
 print(figWeightSubj)
@@ -111,7 +111,7 @@ figNoiseSubj <- ggplot() + geom_histogram(data=dataSingleSubj,aes(noise),alpha =
 ylab(' ') +
 xlab( 'Noise' ) +
 ggtitle("Posterior distribution of the inidividual level mean")+
-facet_grid(subject~.)+
+facet_wrap(subject~.)+
 theme(text = element_text(family = 'Arial')) +
 theme_bw() +
 theme(panel.grid = element_blank())
@@ -127,7 +127,7 @@ figBiasSubj <- ggplot() + geom_histogram(data=dataSingleSubj,aes((bias-0.5)/2),a
 ylab(' ') +
 xlab( 'Bias' ) +
 ggtitle("Posterior distribution of the inidividual level mean")+
-facet_grid(subject~.)+
+facet_wrap(subject~.)+
 theme(text = element_text(family = 'Arial')) +
 theme_bw() +
 theme(panel.grid = element_blank())
@@ -140,9 +140,9 @@ dev.new(width = 5, height =5)
 figNDTSubj <- ggplot() + geom_histogram(data=dataSingleSubj,aes(nDT),alpha = 0.8,position = "identity",binwidth=0.0025,fill="red2",colour="black")+
 #coord_cartesian(xlim = (c(0.4,0.6)-0.5)/2, ylim = c(0,8000)) +
 ylab(' ') +
-xlab( 'Bias' ) +
+xlab( 'Non-decision time' ) +
 ggtitle("Posterior distribution of the inidividual level mean")+
-facet_grid(subject~.)+
+facet_wrap(subject~.)+
 theme(text = element_text(family = 'Arial')) +
 theme_bw() +
 theme(panel.grid = element_blank())

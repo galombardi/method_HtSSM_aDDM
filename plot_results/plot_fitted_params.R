@@ -23,7 +23,7 @@ main_folder <- file.path(pathToFolder,"method_HtSSM_aDDM")
 
 # load fitting results
 load( file.path(main_folder, resultsFileName))
-chain=(rbind(results$mcmc[[1]], results$mcmc[[2]], results$mcmc[[3]]))
+chain=as.data.frame(rbind(results$mcmc[[1]], results$mcmc[[2]], results$mcmc[[3]]))
 
 
 ## plot of posterior distributions of the GROUP LEVEL mean parameters
@@ -31,7 +31,7 @@ chain=(rbind(results$mcmc[[1]], results$mcmc[[2]], results$mcmc[[3]]))
 # TIME PARAMETER GROUP LEVEL
 # if it's positive the b1 attribute (health) comes later at time t, if it's negative the b2 attribute (taste) comes later at time -t
 dev.new(width = 5, height =5)
-figTime <- ggplot() + geom_histogram(data=chain,aes(time.mu),alpha = 0.8,position = "identity",binwidth=0.03,fill="red2",colour="black")+
+figTime <- ggplot() + geom_histogram(data=chain,aes(time.mu),alpha = 0.8,position = "identity",binwidth=0.01,fill="red2",colour="black")+
 #coord_cartesian(xlim = c(-1,1), ylim = c(0,6000)) +
 ggtitle("Posterior distribution of the group level mean")+
   ylab(' ') +
@@ -77,7 +77,7 @@ print(figNoise)
 
 # BIAS PARAMETER GROUP LEVEL
 dev.new(width = 5, height =5)
-figBias <- ggplot() + geom_histogram(data=chainI,aes((bias.mu-0.5)/2),alpha = 0.8,position = "identity",binwidth=0.0025,fill="red2",colour="black")+
+figBias <- ggplot() + geom_histogram(data=chain,aes((bias.mu-0.5)/2),alpha = 0.8,position = "identity",binwidth=0.0025,fill="red2",colour="black")+
 #coord_cartesian(xlim = (c(0.4,0.6)-0.5)/2, ylim = c(0,8000)) +
   ylab(' ') +
   xlab( 'Bias' ) +
@@ -91,10 +91,10 @@ print(figBias)
 
 # NDT PARAMETER GROUP LEVEL
 dev.new(width = 5, height =5)
-figNDT <- ggplot() + geom_histogram(data=chainI,aes(theta.mu),alpha = 0.8,position = "identity",binwidth=0.0025,fill="red2",colour="black")+
+figNDT <- ggplot() + geom_histogram(data=chain,aes(theta.mu),alpha = 0.8,position = "identity",binwidth=0.0025,fill="red2",colour="black")+
   #coord_cartesian(xlim = (c(0.4,0.6)-0.5)/2, ylim = c(0,8000)) +
   ylab(' ') +
-  xlab( 'Bias' ) +
+  xlab( 'Non-decision time' ) +
 ggtitle("Posterior distribution of the group level mean")+
    theme(text = element_text(family = 'Arial')) +
   theme_bw() +
