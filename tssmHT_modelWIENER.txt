@@ -9,7 +9,7 @@ model {
         b2.pr ~ dgamma(1, 0.1)
         
 	# mean estimates DDM parameters
-        alpha.mu ~ dunif(0.001, 1) # noise
+        alpha.mu ~ dunif(0.001, 2) # noise
         theta.mu ~ dunif(0, 10) # non decision times
 
 	# Error terms for nDT
