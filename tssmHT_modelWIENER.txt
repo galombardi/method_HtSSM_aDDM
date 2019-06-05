@@ -1,8 +1,8 @@
 model {
 
     # Mean estimates of the linear regressions for the weights
-        b1.mu ~ dunif(-5,5) # td
-        b2.mu ~ dunif(-5,5) # hd
+        b1.mu ~ dunif(-5,5) # hd
+        b2.mu ~ dunif(-5,5) # td
         
 	# precisions for the linear regression estimates
         b1.pr ~ dgamma(1, 0.1)
