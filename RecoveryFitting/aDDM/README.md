@@ -7,20 +7,20 @@ aDDMsim_ndt.R --> aDDM with the euler method (bounded accumulation series) for t
 
 Data_RiskySafe.Rda --> lottery data from real experiment
 
- Data variables:  
- GambleChosen  -> =1 if the gamble option is chosen, =0 if the safe option is chosen. 
- Ev  -> value safe option.  
- Ce -> value option on the right. 
- RT      -> reaction time in ms. 
- NumFixations  -> fixation number. 
- fixationTime  -> fixation duration in seconds. 
- FixateGamble  -> 1 if the gamble is fixated, 0 if the safe option is fixated. 
- PercentFixGamble -> proportion of time the gamble is attended. 
- TotFixTime    -> total fixation time of fixations. 
- FixationTimeGamble -> total fixation time to the gamble. 
- trialCount   -> trial number. 
- SubjectNum -> subject number. 
-  
+Data variables:  
+GambleChosen  -> =1 if the gamble option is chosen, =0 if the safe option is chosen.  
+Ev  -> value safe option.  
+Ce -> value option on the right.  
+RT      -> reaction time in ms.  
+NumFixations  -> fixation number.  
+fixationTime  -> fixation duration in seconds.  
+FixateGamble  -> 1 if the gamble is fixated, 0 if the safe option is fixated.  
+PercentFixGamble -> proportion of time the gamble is attended.  
+TotFixTime    -> total fixation time of fixations.  
+FixationTimeGamble -> total fixation time to the gamble.  
+trialCount   -> trial number.  
+SubjectNum -> subject number.  
+
 
 ## a) Recovery of homogeneuos parameters
 the scripts a_Rscript_HaDDM_RecoveryFit_homogeneousParams_*.R perform simulations of the aDDM with the euler method (bounded accumulation series) with different fixed parameters that are constant across subjects. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
