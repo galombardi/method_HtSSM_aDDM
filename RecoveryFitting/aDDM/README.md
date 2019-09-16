@@ -84,9 +84,6 @@ then run
 `source('~/method_HtSSM_aDDM/RecoveryFitting/aDDM/a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise30.R')`
 
 
-## NOTES
-Make sure that the reaction time data you want to fit does not have missing values or NAs before running.
-
 
 
 
