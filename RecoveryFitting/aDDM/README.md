@@ -46,7 +46,7 @@ biasDist<- rnorm(20000,bias,0.01)
 thetaDist<- rnorm(20000,theta,0.05)
 dDist<- rnorm(20000,d,0.0005)
 
-## c) Recovery from real fitted parameters parameters
+## c) Recovery from real fitted parameters
 After fitting the model to real data - results_realFIT_HaDDM_LotteryData_RiskySafe.RData , the scripts c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams*.R perform simulations of the aDDM with the euler method (bounded accumulation series) with the mean at the individual level for each parameter. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
 
 c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams.R -> perform simulations and recovery fitting with all the real parameter fitted. For each subject the mean at the individual level for each parameter is used.
