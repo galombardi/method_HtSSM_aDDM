@@ -34,8 +34,8 @@ a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise63.R -> perform simulations a
 ## b) Recovery of heterogeneuos parameters
 the scripts b_Rscript_HaDDM_RecoveryFit_ heterogeneousParams.R perform simulations of the aDDM with the euler method (bounded accumulation series) with different parameters that are drawn from gaussian distributions separately for each subject. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
 
-MEAN of the PARAMETERS to recover
-d <- 12. 
+MEAN of the PARAMETERS to recover  
+d <- 12  
 theta <- 0.35  
 noise <- 0.41  
 bias<-0  
