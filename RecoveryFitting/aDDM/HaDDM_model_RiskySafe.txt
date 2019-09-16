@@ -1,0 +1,96 @@
+model {
+
+    # Mean estimates of the linear regressions for the drift rate
+    b.mu[c] ~ dunif(0.00001,50) # d
+
+    # precisions for the linear regression estimates
+    b.pr[c] ~ dgamma(1, 0.1)
+
+    # mean estimates DDM parameters
+    alpha.mu[c] ~ dunif(0.000001, 2)    # noise
+    ndt.mu[c] ~ dunif(0, 5)             # non decision times
+
+    # Error terms for nDT
+    alpha.pr[c] ~ dgamma(1, 0.1)
+    ndt.pr[c] ~ dgamma(1, 0.1)
+
+
+    # error term for the regression function
+    e.sG[c] <- pow(e.m[c],2) / pow(e.d[c],2)
+    e.rG[c] <- e.m[c] / pow(e.d[c],2)
+    e.m[c] ~ dgamma(1,0.2)T(0.001,20)
+    e.d[c] ~ dgamma(1,0.5)T(0.001,20)
+
+
+    # error term for the bias
+    lambda.sG[c] <- pow(lambda.m[c],2) / pow(lambda.d[c],2)
+    lambda.rG[c] <- lambda.m[c] / pow(lambda.d[c],2)
+    lambda.m[c] ~ dgamma(1,0.2)T(0.001,20)
+    lambda.d[c] ~ dgamma(1,0.5)T(0.001,20)
+
+    # error term for nDT
+    chi.sG[c] <- pow(chi.m[c],2) / pow(chi.d[c],2)
+    chi.rG[c] <- chi.m[c] / pow(chi.d[c],2)
+    chi.m[c] ~ dgamma(1,0.2)T(0.001,20)
+    chi.d[c] ~ dgamma(1,0.5)T(0.001,20)
+
+    # Bias of the DDM
+    bias.alpha[c] <- bias.mu[c] * bias.kappa[c]
+    bias.beta[c] <- (1 - bias.mu[c]) * bias.kappa[c]
+    bias.mu[c] ~ dbeta(2, 2)T(0.01,0.99)
+    bias.kappa[c] ~ dgamma(1, 0.5)
+
+    # thetaGaze of the DDM - discount factor
+    thetaGaze.alpha[c] <- thetaGaze.mu[c] * thetaGaze.kappa[c]
+    thetaGaze.beta[c] <- (1 - thetaGaze.mu[c]) * thetaGaze.kappa[c]
+    thetaGaze.mu[c] ~ dbeta(2, 2)T(0.01,0.99)
+    thetaGaze.kappa[c] ~ dgamma(1, 1)
+
+
+    }
+
+    for (p in 1:ns) { # subject level
+
+    b.p[p] ~ dnorm(b.mu, b.pr)T(0.000001,50)
+
+    thetaGaze[p] ~ dbeta(thetaGaze.alpha, thetaGaze.beta)T(0.01,0.99)
+
+    alpha.p[p] ~ dnorm(alpha.mu, alpha.pr)T(0.00001,2)
+    theta.p[p] ~ dnorm(ndt.mu, ndt.pr)T(0.01,5)
+
+    e.p.tau[p] ~ dgamma(e.sG, e.rG)T(0.001,20)
+    chi.p.tau[p] ~ dgamma(chi.sG, chi.rG)T(0.001,20)
+    lambda.p.tau[p] ~ dgamma(lambda.sG, lambda.rG)T(0.001,20)
+
+    bias[p] ~ dbeta(bias.alpha, bias.beta)T(0.01,0.99)
+    }
+
+    for (i in 1:N) { # trial level
+
+        ## WIENER model, fixing the threshold to 2 and estimating the noise
+        y[i] ~ dwieners(2, tau[i], bet[i], w[i], alpha.p[idxP[i]] ) # actual DDM distribution
+
+        # generate predictions
+        y_pred[i] ~ dwieners(2, tau[i], bet[i], w[i], alpha.p[idxP[i]] )
+
+        # generate trial-by-trial nDT
+        tau[i] <- theta.p[idxP[i]]
+
+        # generate trial-by-trial Bias
+        bet[i] <- bias[idxP[i]]
+
+        # The actual drift rate
+        w[i] ~ dnorm(li.hat[i], e.p.tau[idxP[i]])
+
+        # Drift rate function, depends on the fixations and rt
+        li.hat[i] <- b2.p[idxP[i]] * ( (gazeG[i]*v_gamble[i] - (1-gazeG[i])*v_safe[i]) + thetaGaze[idxP[i]]*((1-gazeG[i])*v_gamble[i] - gazeG[i]*v_safe[i]))
+
+
+        # The linear regression of the value of the two options in the choice set
+        v_gamble[i] <-  ce[i]
+        v_safe[i] <- ev[i]
+
+
+    }
+}
+

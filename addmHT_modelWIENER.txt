@@ -1,50 +1,50 @@
 model {
 
     # Mean estimates of the linear regressions for the drift rate
-        b.mu[c] ~ dunif(0.00001,50) # d
+        b.mu ~ dunif(0.00001,50) # d
 
     # precisions for the linear regression estimates
-        b.pr[c] ~ dgamma(1, 0.1)
+        b.pr ~ dgamma(1, 0.1)
 
     # mean estimates DDM parameters
-        alpha.mu[c] ~ dunif(0.000001, 2)    # noise
-        ndt.mu[c] ~ dunif(0, 5)             # non decision times
+        alpha.mu ~ dunif(0.000001, 2)    # noise
+        ndt.mu ~ dunif(0, 5)             # non decision times
 
     # Error terms for nDT
-        alpha.pr[c] ~ dgamma(1, 0.1)
-        ndt.pr[c] ~ dgamma(1, 0.1)
+        alpha.pr ~ dgamma(1, 0.1)
+        ndt.pr ~ dgamma(1, 0.1)
 
 
     # error term for the regression function
-        e.sG[c] <- pow(e.m[c],2) / pow(e.d[c],2)
-        e.rG[c] <- e.m[c] / pow(e.d[c],2)
-        e.m[c] ~ dgamma(1,0.2)T(0.001,20)
-        e.d[c] ~ dgamma(1,0.5)T(0.001,20)
+        e.sG <- pow(e.m,2) / pow(e.d,2)
+        e.rG <- e.m / pow(e.d,2)
+        e.m ~ dgamma(1,0.2)T(0.001,20)
+        e.d ~ dgamma(1,0.5)T(0.001,20)
 
 
     # error term for the bias
-        lambda.sG[c] <- pow(lambda.m[c],2) / pow(lambda.d[c],2)
-        lambda.rG[c] <- lambda.m[c] / pow(lambda.d[c],2)
-        lambda.m[c] ~ dgamma(1,0.2)T(0.001,20)
-        lambda.d[c] ~ dgamma(1,0.5)T(0.001,20)
+        lambda.sG <- pow(lambda.m,2) / pow(lambda.d,2)
+        lambda.rG <- lambda.m / pow(lambda.d,2)
+        lambda.m ~ dgamma(1,0.2)T(0.001,20)
+        lambda.d ~ dgamma(1,0.5)T(0.001,20)
 
     # error term for nDT
-        chi.sG[c] <- pow(chi.m[c],2) / pow(chi.d[c],2)
-        chi.rG[c] <- chi.m[c] / pow(chi.d[c],2)
-        chi.m[c] ~ dgamma(1,0.2)T(0.001,20)
-        chi.d[c] ~ dgamma(1,0.5)T(0.001,20)
+        chi.sG <- pow(chi.m,2) / pow(chi.d,2)
+        chi.rG <- chi.m / pow(chi.d,2)
+        chi.m ~ dgamma(1,0.2)T(0.001,20)
+        chi.d ~ dgamma(1,0.5)T(0.001,20)
 
     # Bias of the DDM
-        bias.alpha[c] <- bias.mu[c] * bias.kappa[c]
-        bias.beta[c] <- (1 - bias.mu[c]) * bias.kappa[c]
-        bias.mu[c] ~ dbeta(2, 2)T(0.01,0.99)
-        bias.kappa[c] ~ dgamma(1, 0.5)
+        bias.alpha <- bias.mu * bias.kappa
+        bias.beta <- (1 - bias.mu) * bias.kappa
+        bias.mu ~ dbeta(2, 2)T(0.01,0.99)
+        bias.kappa ~ dgamma(1, 0.5)
 
     # thetaGaze of the DDM - discount factor
-        thetaGaze.alpha[c] <- thetaGaze.mu[c] * thetaGaze.kappa[c]
-        thetaGaze.beta[c] <- (1 - thetaGaze.mu[c]) * thetaGaze.kappa[c]
-        thetaGaze.mu[c] ~ dbeta(2, 2)T(0.01,0.99)
-        thetaGaze.kappa[c] ~ dgamma(1, 1)
+        thetaGaze.alpha <- thetaGaze.mu * thetaGaze.kappa
+        thetaGaze.beta <- (1 - thetaGaze.mu) * thetaGaze.kappa
+        thetaGaze.mu ~ dbeta(2, 2)T(0.01,0.99)
+        thetaGaze.kappa ~ dgamma(1, 1)
 
 
     for (p in 1:ns) { # subject level
@@ -80,7 +80,7 @@ model {
         # The actual drift rate
         w[i] ~ dnorm(li.hat[i], e.p.tau[idxP[i]])
 
-
+        # Drift rate function, depends on the fixations and rt
         li.hat[i] <- b.p[idxP[i]] * ( (gazeL[i]*v_1[i] - (1-gazeL[i])*v_2[i]) + thetaGaze[idxP[i]]*((1-gazeL[i])*v_1[i] - gazeL[i]*v_2[i]))
 
 

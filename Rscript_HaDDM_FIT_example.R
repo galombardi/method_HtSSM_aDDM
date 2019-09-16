@@ -2,7 +2,8 @@ rm(list=ls())
 pack = "runjags"
 have = pack %in% rownames(installed.packages())
 if ( any(!have) ) { install.packages( pack[!have] ) }
-library(runjags)
+# Now load it
+suppressPackageStartupMessages(lapply(pack, require, character.only = TRUE))
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # CHANGE THIS WITH THE PATH WHERE YOU SAVE ALL THE SCRIPTS AND THE DATA
@@ -22,8 +23,8 @@ load( file.path(main_folder, mydata))
 # # # data variables: # # #
 #
 # choice  -> =1 if left food item chosen, =0 if right food item chosen
-# v_left  -> value option on the left
-# v_right -> value option on the right
+# leftval  -> value option on the left
+# rightval -> value option on the right
 # rt      -> reaction time in ms
 # fixnum  -> fixation number
 # fixdur  -> fixation duration in ms
@@ -72,8 +73,8 @@ data$rtPN[data$choice==0]<- -data$rt[data$choice==0]/1000 # make it in seconds
 idxP = as.numeric(ordered(data$subject)) #makes a sequentially numbered subj index
 
 # scale the value of the options
-v_left = (data$v_left)/5
-v_right = (data$v_right)/5
+v_left = (data$leftval)/5
+v_right = (data$rightval)/5
 
 # proportion of fixations to the left option (nb. fixright = 1-gazeL)
 gazeL = data$fixleft/data$totfix
@@ -95,12 +96,12 @@ ns = length(unique(idxP))
 dat <- dump.format(list(N=N, y=y, idxP=idxP, v_left=v_left,v_right=v_right, gazeL=gazeL, ns=ns))
   
 # create random values for the inital values of noise mean and variance
-alpha.mu1 = as.vector(matrix(1.3 + rnorm(nc)*0.2,nc,1))
-alpha.mu2 = as.vector(matrix(1.3 + rnorm(nc)*0.2,nc,1))
-alpha.mu3 = as.vector(matrix(1.3 + rnorm(nc)*0.2,nc,1))
-alpha.si1 = as.vector(matrix(runif(nc)*10, nc,1))
-alpha.si2 = as.vector(matrix(runif(nc)*10, nc,1))
-alpha.si3 = as.vector(matrix(runif(nc)*10, nc,1))
+alpha.mu1 = as.vector(matrix(1.3 + rnorm(1)*0.2,1,1))
+alpha.mu2 = as.vector(matrix(1.3 + rnorm(1)*0.2,1,1))
+alpha.mu3 = as.vector(matrix(1.3 + rnorm(1)*0.2,1,1))
+alpha.si1 = as.vector(matrix(runif(1)*10, 1,1))
+alpha.si2 = as.vector(matrix(runif(1)*10, 1,1))
+alpha.si3 = as.vector(matrix(runif(1)*10, 1,1))
 
 
 
