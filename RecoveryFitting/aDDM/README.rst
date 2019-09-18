@@ -52,20 +52,20 @@ MEAN of the PARAMETERS to recover
 
 .. code:: R
 
-  d <- 12  
+  d     <- 12  
   theta <- 0.35  
   noise <- 0.41  
-  bias<-0 
+  bias  <-0 
  
   
 GAUSSIAN DISTRIBUTIONS of the parameters  
 
 .. code:: R
 
-  noiseDist<- rnorm(20000,noise,0.0008)  
-  biasDist<- rnorm(20000,bias,0.01)  
-  thetaDist<- rnorm(20000,theta,0.05)  
-  dDist<- rnorm(20000,d,0.0005)  
+  noiseDist <- rnorm(20000,noise,0.0008)  
+  biasDist  <- rnorm(20000,bias,0.01)  
+  thetaDist <- rnorm(20000,theta,0.05)  
+  dDist     <- rnorm(20000,d,0.0005)  
   
 c) Recovery from real fitted parameters
 ---------------------------------------
@@ -87,7 +87,8 @@ c) Recovery from real fitted parameters
 
 
 
-## Before running
+Before running
+--------------
 
 install jags_4.3.0.orig.tar.gz from library https://sourceforge.net/projects/mcmc-jags/ then run  
 `tar --bzip2 -xf ~/jags_4.3.0.orig.tar.gz`  
@@ -103,8 +104,9 @@ install JAGS-WIENER-MODULE-1.1.tar.gz from library https://sourceforge.net/proje
 `make -j 8`  
 `sudo make install`  
 
+How to run the code
+-------------------
 
-## How to run the code
 First change the path pathToFolder in the a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise30.R with the path in which you saved all the scripts, for example:
 `pathToFolder <- "~/pathToFolder"`  
 then run   
