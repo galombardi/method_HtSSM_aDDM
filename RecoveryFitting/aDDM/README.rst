@@ -10,19 +10,20 @@ aDDMsim_ndt.R --> aDDM with the euler method (bounded accumulation series) for t
 
 Data_RiskySafe.Rda --> lottery data from real experiment
 
-Data variables:  
-- GambleChosen  -> =1 if the gamble option is chosen, =0 if the safe option is chosen.  
-- Ev  -> value safe option.  
-- Ce -> value option on the right.  
-- RT      -> reaction time in ms.  
-- NumFixations  -> fixation number.  
-- fixationTime  -> fixation duration in seconds.  
-- FixateGamble  -> 1 if the gamble is fixated, 0 if the safe option is fixated.  
-- PercentFixGamble -> proportion of time the gamble is attended.  
-- TotFixTime    -> total fixation time of fixations.  
-- FixationTimeGamble -> total fixation time to the gamble.  
-- trialCount   -> trial number.  
-- SubjectNum -> subject number.  
+Data variables:
+  - GambleChosen  -> =1 if the gamble option is chosen, =0 if the safe option is chosen
+  - Ev   -> value safe option
+  - Ce   -> value option on the right
+  - RT   -> reaction time in ms
+  - NumFixations  -> fixation number
+  - fixationTime  -> fixation duration in seconds
+  - FixateGamble  -> 1 if the gamble is fixated, 0 if the safe option is fixated
+  - PercentFixGamble -> proportion of time the gamble is attended
+  - TotFixTime    -> total fixation time of fixations
+  - FixationTimeGamble -> total fixation time to the gamble
+  - trialCount   -> trial number
+  - SubjectNum -> subject number
+
 
 
 a) Recovery of homogeneuos parameters
@@ -42,14 +43,20 @@ b) Recovery of heterogeneuos parameters
 the scripts b_Rscript_HaDDM_RecoveryFit_ heterogeneousParams.R perform simulations of the aDDM with the euler method (bounded accumulation series) with different parameters that are drawn from gaussian distributions separately for each subject. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
 
 MEAN of the PARAMETERS to recover  
+
+
 .. code:: R
+
   d <- 12  
   theta <- 0.35  
   noise <- 0.41  
-  bias<-0  
+  bias<-0 
+ 
   
 GAUSSIAN DISTRIBUTIONS of the parameters  
+
 .. code:: R
+
   noiseDist<- rnorm(20000,noise,0.0008)  
   biasDist<- rnorm(20000,bias,0.01)  
   thetaDist<- rnorm(20000,theta,0.05)  
