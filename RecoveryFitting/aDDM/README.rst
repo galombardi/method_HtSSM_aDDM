@@ -4,11 +4,11 @@ Recovery fitting for the HaDDM
 Model and data
 --------------
 
-  - HaDDM_model_RiskySafe.txt  --> hierarchical bayesian aDDM with the piece-wise constant approximation method. The model has been written for a lottery task in which subjects can choose between a gamble and a safe option in each trials.
+* HaDDM_model_RiskySafe.txt  --> hierarchical bayesian aDDM with the piece-wise constant approximation method. The model has been written for a lottery task in which subjects can choose between a gamble and a safe option in each trials.
 
-  - aDDMsim_ndt.R --> aDDM with the euler method (bounded accumulation series) for the lottery task
+* aDDMsim_ndt.R --> aDDM with the euler method (bounded accumulation series) for the lottery task
 
-  - Data_RiskySafe.Rda --> lottery data from real experiment
+* Data_RiskySafe.Rda --> lottery data from real experiment
 
 Data variables:
   - GambleChosen  -> =1 if the gamble option is chosen, =0 if the safe option is chosen
