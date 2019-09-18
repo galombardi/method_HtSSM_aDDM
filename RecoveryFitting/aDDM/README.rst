@@ -55,7 +55,7 @@ MEAN of the PARAMETERS to recover
   d     <- 12  
   theta <- 0.35  
   noise <- 0.41  
-  bias  <-0 
+  bias  <- 0 
  
   
 GAUSSIAN DISTRIBUTIONS of the parameters  
