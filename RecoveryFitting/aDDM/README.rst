@@ -8,7 +8,7 @@ Model and data
 
 * aDDMsim_ndt.R --> aDDM with the euler method (bounded accumulation series) for the lottery task
 
-* Data_RiskySafe.Rda --> lottery data from real experiment
+* Data_RiskySafe.Rda --> lottery data from real experiment, in each trial subjs choose between a gamble and a sure option
 
 Data variables:
   - GambleChosen  -> =1 if the gamble option is chosen, =0 if the safe option is chosen
