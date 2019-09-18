@@ -30,7 +30,7 @@ a) Recovery of homogeneuos parameters
 -------------------------------------
 
 
-* the scripts a_Rscript_HaDDM_RecoveryFit_homogeneousParams_*.R_ perform simulations of the aDDM with the euler method (bounded accumulation series) with different fixed parameters that are constant across subjects. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
+* the scripts a_Rscript_HaDDM_RecoveryFit_homogeneousParams_--.R_ perform simulations of the aDDM with the euler method (bounded accumulation series) with different fixed parameters that are constant across subjects. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
 
 
 * a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise30.R_ -> perform simulations and recovery fitting with theta in {0.2,0.4,0.6,0.8}, drift constant in {6,10,14} and the standard deviation of the noise = 0.30
@@ -70,7 +70,7 @@ GAUSSIAN DISTRIBUTIONS of the parameters
 c) Recovery from real fitted parameters
 ---------------------------------------
 
-* After fitting the model to real data - results_realFIT_HaDDM_LotteryData_RiskySafe.RData_ , the scripts c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams*.R_ perform simulations of the aDDM with the euler method (bounded accumulation series) with the mean at the individual level for each parameter. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
+* After fitting the model to real data - results_realFIT_HaDDM_LotteryData_RiskySafe.RData_ , the scripts c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams--.R_ perform simulations of the aDDM with the euler method (bounded accumulation series) with the mean at the individual level for each parameter. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
 
 
 * c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams.R_ -> perform simulations and recovery fitting with all the real parameter fitted. For each subject the mean at the individual level for each parameter is used.
