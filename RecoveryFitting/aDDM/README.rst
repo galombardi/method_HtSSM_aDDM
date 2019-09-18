@@ -73,16 +73,16 @@ c) Recovery from real fitted parameters
 * After fitting the model to real data - results_realFIT_HaDDM_LotteryData_RiskySafe.RData_ , the scripts c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams_.R perform simulations of the aDDM with the euler method (bounded accumulation series) with the mean at the individual level for each parameter. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
 
 
-* c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams.R_ -> perform simulations and recovery fitting with all the real parameter fitted. For each subject the mean at the individual level for each parameter is used.
+* c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams.R_ -> performs simulations and recovery fitting with all the real parameter fitted. For each subject the mean at the individual level for each parameter is used.
 
 
-* c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams_FixedTheta4.R_ -> perform simulations and recovery fitting with all the real parameter fitted and a fixed theta=0.4. For each subject the mean at the individual level for each parameter is used and the same fixed theta=0.4 for all subjects.
+* c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams_FixedTheta4.R_ -> performs simulations and recovery fitting with all the real parameter fitted and a fixed theta=0.4. For each subject the mean at the individual level for each parameter is used and the same fixed theta=0.4 for all subjects.
 
 
-* c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams_FixedTheta8.R_ -> perform simulations and recovery fitting with all the real parameter fitted and a fixed theta=0.8. For each subject the mean at the individual level for each parameter is used and the same fixed theta=0.8 for all subjects.
+* c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams_FixedTheta8.R_ -> performs simulations and recovery fitting with all the real parameter fitted and a fixed theta=0.8. For each subject the mean at the individual level for each parameter is used and the same fixed theta=0.8 for all subjects.
 
 
-* c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams_FixedThetaMean.R_ -> perform simulations and recovery fitting with all the real parameter fitted and a fixed theta which is equal to the mean population parameter for all the subjects. For each subject the mean at the individual level for each parameter is used and the same fixed theta=mean group-level parameter equal for all subjects.
+* c_Rscript_HaDDM_RecoveryFit_fromRealFittedParams_FixedThetaMean.R_ -> performs simulations and recovery fitting with all the real parameter fitted and a fixed theta which is equal to the mean population parameter for all the subjects. For each subject the mean at the individual level for each parameter is used and the same fixed theta=mean group-level parameter equal for all subjects.
 
 
 
