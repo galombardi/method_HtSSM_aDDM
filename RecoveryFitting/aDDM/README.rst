@@ -33,13 +33,13 @@ a) Recovery of homogeneuos parameters
 * the scripts a_Rscript_HaDDM_RecoveryFit_homogeneousParams_.R perform simulations of the aDDM with the euler method (bounded accumulation series) with different fixed parameters that are constant across subjects. After simulating the data, a fitting procedure is performed with the HaDDM on the simulated data.
 
 
-* a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise30.R_ -> perform simulations and recovery fitting with theta in {0.2,0.4,0.6,0.8}, drift constant in {6,10,14} and the standard deviation of the noise = 0.30
+* a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise30.R_ -> performs simulations and recovery fitting with theta in {0.2,0.4,0.6,0.8}, drift constant in {6,10,14} and the standard deviation of the noise = 0.30
 
 
-* a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise45.R_ -> perform simulations and recovery fitting with theta in {0.2,0.4,0.6,0.8}, drift constant in {6,10,14} and the standard deviation of the noise = 0.45
+* a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise45.R_ -> performs simulations and recovery fitting with theta in {0.2,0.4,0.6,0.8}, drift constant in {6,10,14} and the standard deviation of the noise = 0.45
 
 
-* a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise63.R_ -> perform simulations and recovery fitting with theta in {0.2,0.4,0.6,0.8}, drift constant in {6,10,14} and the standard deviation of the noise = 0.63
+* a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise63.R_ -> performs simulations and recovery fitting with theta in {0.2,0.4,0.6,0.8}, drift constant in {6,10,14} and the standard deviation of the noise = 0.63
 
 b) Recovery of heterogeneuos parameters
 ---------------------------------------
