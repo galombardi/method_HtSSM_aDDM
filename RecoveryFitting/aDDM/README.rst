@@ -91,26 +91,40 @@ Before running
 --------------
 
 install jags_4.3.0.orig.tar.gz from library https://sourceforge.net/projects/mcmc-jags/ then run  
-`tar --bzip2 -xf ~/jags_4.3.0.orig.tar.gz`  
-`cd JAGS_4.3.0/`  
-`./configure`  
-`make -j 8`  
-`sudo make install`  
 
-install JAGS-WIENER-MODULE-1.1.tar.gz from library https://sourceforge.net/projects/mcmc-jags/ then run  
-`tar --bzip2 -xf ~/JAGS-WIENER-MODULE-1.1.tar.gz`  
-`cd JAGS-WIENER-MODULE-1.1/`  
-`./configure`  
-`make -j 8`  
-`sudo make install`  
+.. code:: sh
+
+  tar --bzip2 -xf ~/jags_4.3.0.orig.tar.gz
+  cd JAGS_4.3.0/
+  ./configure  
+  make -j 8
+  sudo make install  
+
+
+install JAGS-WIENER-MODULE-1.1.tar.gz from library https://sourceforge.net/projects/mcmc-jags/ then run
+
+.. code:: sh
+
+  tar --bzip2 -xf ~/JAGS-WIENER-MODULE-1.1.tar.gz
+  cd JAGS-WIENER-MODULE-1.1/ 
+  ./configure`  
+  make -j 8
+  sudo make install
 
 How to run the code
 -------------------
 
 First change the path pathToFolder in the a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise30.R with the path in which you saved all the scripts, for example:
-`pathToFolder <- "~/pathToFolder"`  
-then run   
-`source('~/method_HtSSM_aDDM/RecoveryFitting/aDDM/a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise30.R')`
+
+.. code:: R
+
+  pathToFolder <- "~/pathToFolder"`  
+
+then run  
+
+.. code:: sh
+
+  source('~/method_HtSSM_aDDM/RecoveryFitting/aDDM/a_Rscript_HaDDM_RecoveryFit_homogeneousParams_noise30.R')
 
 
 
