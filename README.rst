@@ -43,7 +43,7 @@ then run
 
 NOTES
 -----
-Make sure that the reaction time data you want to fit does not have missing values or NAs before running.  
+* Make sure that the reaction time data you want to fit does not have missing values or NAs before running.  
 
-The Recovery fitting can be found in the RecoveryFitting/ folder
+* The Recovery fitting can be found in the RecoveryFitting/ folder
 
