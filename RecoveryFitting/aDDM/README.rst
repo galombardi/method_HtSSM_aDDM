@@ -107,7 +107,7 @@ install JAGS-WIENER-MODULE-1.1.tar.gz from library https://sourceforge.net/proje
 
   tar --bzip2 -xf ~/JAGS-WIENER-MODULE-1.1.tar.gz
   cd JAGS-WIENER-MODULE-1.1/ 
-  ./configure`  
+  ./configure
   make -j 8
   sudo make install
 
