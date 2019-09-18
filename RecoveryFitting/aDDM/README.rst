@@ -118,7 +118,7 @@ First change the path pathToFolder in the a_Rscript_HaDDM_RecoveryFit_homogeneou
 
 .. code:: R
 
-  pathToFolder <- "~/pathToFolder"`  
+  pathToFolder <- "~/pathToFolder"  
 
 then run  
 
