@@ -101,7 +101,7 @@ install jags_4.3.0.orig.tar.gz from library https://sourceforge.net/projects/mcm
   sudo make install  
 
 
-install JAGS-WIENER-MODULE-1.1.tar.gz from library https://sourceforge.net/projects/mcmc-jags/ then run
+install JAGS-WIENER-MODULE-1.1.tar.gz from library https://sourceforge.net/projects/jags-wiener/ then run
 
 .. code:: sh
 
